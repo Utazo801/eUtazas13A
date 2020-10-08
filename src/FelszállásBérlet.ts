@@ -6,8 +6,9 @@ export default class FelszállásBérlet extends Felszállás {
 
     public get ervenyesFelszallas(): boolean {
         // egy napnyi ezredmásodperc hozzáadása
-        const ervenyessegLejar: number = this._érvényes.valueOf() + 24 * 60 * 60 * 1000;
-        return this._idő.valueOf() < ervenyessegLejar;
+        //const ervenyessegLejar: number = this._érvényes.valueOf() + 24 * 60 * 60 * 1000;
+        //return this._idő.valueOf() < ervenyessegLejar;
+        return this._idő <= this._érvényes;
     }
     constructor(sor: string) {
         super(sor); //ősosztály konstruktorát hívja
@@ -16,6 +17,6 @@ export default class FelszállásBérlet extends Felszállás {
         const év: number = parseInt(m[4].substr(0, 4));
         const hónap: number = parseInt(m[4].substr(4, 2)) - 1; //TS-JS hónapok számozása 0-val indul
         const nap: number = parseInt(m[4].substr(6, 2));
-        this._érvényes = new Date(év, hónap, nap);
+        this._érvényes = new Date(év, hónap, nap, 23, 59, 59, 999);
     }
 }

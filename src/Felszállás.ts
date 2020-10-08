@@ -3,6 +3,9 @@ export default abstract class Felszállás {
     protected _idő: Date;
     protected _kártyaAzon: string;
 
+    public get megalloSoszama(): number {
+        return this._megalóSorszáma;
+    }
     public get ervenyesFelszallas(): boolean {
         return false;
     }

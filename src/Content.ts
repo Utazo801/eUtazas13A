@@ -17,7 +17,7 @@ export default class Content {
         res.write("<head>");
         res.write("<style>input, pre {font-family:monospace; font-size:1em; font-weight:bold;}</style>");
         res.write("<meta name='viewport' content='width=device-width, initial-scale=1.0'>");
-        res.write("<title>Jedlik Ts Template</title>");
+        res.write("<title>eUtazás</title>");
         res.write("</head>");
         res.write("<body><form><pre class='m-3'>");
         // Kezd a kódolást innen -->
@@ -27,6 +27,8 @@ export default class Content {
         res.write(`\nA buszra ${megold.felszallokSzama} utas akart felszállni. `);
         res.write("\n3. feladat");
         res.write(`\nA buszra ${megold.ervenytelenFelszallas} utas nem szálhatott fel.`);
+        res.write("\n4. feladat");
+        res.write(`\nA legtöbb utas (${megold.maxKeresArray.maxFelszallo} fő) a ${megold.maxKeresArray.maxElsoMegallo}. megállóban próbált felszállni`);
         // <---- Fejezd be a kódolást
 
         res.write("</pre></form>");
