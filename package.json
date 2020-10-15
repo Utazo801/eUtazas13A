@@ -20,7 +20,7 @@
         "test": "jest || ECHO.",
         "dev": "nodemon"
     },
-    "author": "Szabó Bence",
+    "author": "Utazo801",
     "license": "MIT",
     "dependencies": {
         "tslib": "^2.0.1"
