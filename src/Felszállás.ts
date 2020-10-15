@@ -12,6 +12,9 @@ export default abstract class Felszállás {
         const d2: number = 365 * e2 + ~~(e2 / 4) - ~~(e2 / 100) + ~~(e2 / 400) + ~~((h2 * 306 + 5) / 10) + n2 - 1;
         return d2 - d1;
     }
+    public get kártyaAzon(): string {
+        return this._kártyaAzon;
+    }
 
     public get érvényesFelszállás(): boolean {
         return false;

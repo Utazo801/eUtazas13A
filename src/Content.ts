@@ -17,7 +17,7 @@ export default class Content {
         res.write("<head>");
         res.write("<style>input, pre {font-family:monospace; font-size:1em; font-weight:bold;}</style>");
         res.write("<meta name='viewport' content='width=device-width, initial-scale=1.0'>");
-        res.write("<title>Jedlik Ts Template</title>");
+        res.write("<title>eUtazás 13A</title>");
         res.write("</head>");
         res.write("<body><form><pre class='m-3'>");
 
@@ -41,6 +41,8 @@ export default class Content {
         res.write(`Ingyenes utazók száma: ${megold.ingyenesenUtazók} fő\n`);
         res.write(`A kedvezményesen utazók száma: ${megold.kedvezményesenUtazók} fő\n`);
 
+        res.write("7. feladat\nFájlba írás");
+        megold.figyelmeztetésÁllományba("figyelmeztetes.txt");
         // <---- Fejezd be a kódolást
 
         res.write("</pre></form>");

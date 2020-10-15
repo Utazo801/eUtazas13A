@@ -77,4 +77,14 @@ export default class Megoldás {
                 }
             });
     }
+    public figyelmeztetésÁllományba(állományNév: string): void {
+        const ki: string[] = [];
+        this._utasadatok.forEach(i => {
+            if (i.érvényesFelszállás && i.lejárHáromNap) {
+                const fb: FelszállásBérlet = i as FelszállásBérlet;
+                ki.push(`${i.kártyaAzon} ${fb.érvényes}`);
+            }
+        });
+        fs.writeFileSync(állományNév, ki.join("\r\n") + "\r\n");
+    }
 }

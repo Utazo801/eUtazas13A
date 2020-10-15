@@ -10,6 +10,9 @@ export default class FelszállásBérlet extends Felszállás {
         // return this._idő.valueOf() < érvényességLejár;
         return this._idő <= this._érvényes;
     }
+    public get érvényes(): string {
+        return `${this._érvényes.toISOString().substr(0, 10)}`;
+    }
 
     public get kedvezményesUtazás(): boolean {
         return this.érvényesFelszállás && ["TAB", "NYB"].includes(this._típus);
@@ -20,7 +23,7 @@ export default class FelszállásBérlet extends Felszállás {
     }
 
     public get lejárHáromNap(): boolean {
-        return this.érvényesFelszállás && Felszállás.napokszama(this._idő.getFullYear(), this._idő.getMonth() + 1, this._idő.getDay(), this._érvényes.getFullYear(), this._érvényes.getMonth() + 1, this._érvényes.getDay()) <= 3;
+        return this.érvényesFelszállás && Felszállás.napokszama(this._idő.getFullYear(), this._idő.getMonth() + 1, this._idő.getDate(), this._érvényes.getFullYear(), this._érvényes.getMonth() + 1, this._érvényes.getDate()) <= 3;
     }
 
     constructor(sor: string) {
